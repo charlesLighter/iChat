@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.ProfileSettings">
+
+
+   <!-- profile picture update-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_profileImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
+            android:padding="2dp"
+            android:src="@drawable/default_profile_avatar"
+            app:civ_border_color="@color/purple_200"
+            app:civ_border_width="1.5dp">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_chooseImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_profileImage"
+            android:layout_toRightOf="@id/user_profileImage"
+            android:backgroundTint="@color/purple_200"
+            android:layout_marginTop="-50dp"
+            android:layout_marginStart="-52dp"
+            android:src="@drawable/ic_camera">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+    </RelativeLayout>
+
+
+    <!--Status and username-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/avater"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:src="@drawable/default_profile_avatar"
+                android:layout_marginStart="10dp"
+                >
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/avater"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/txt_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/name"
+                android:text="">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/et_change_username"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/name"
+                android:layout_marginStart="10dp"
+                android:hint="Change your name"
+                android:textSize="14sp"
+                android:textStyle="italic">
+
+            </EditText>
+
+            <Button
+                android:id="@+id/btn_saveName"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:textAllCaps="false"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp">
+
+            </Button>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+            <ImageView
+                android:id="@+id/ex"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_status"
+                android:layout_marginStart="10dp"
+                >
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status:"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/ex"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/txt_userStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_toRightOf="@id/status"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/et_change_userStatus"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/status"
+                android:layout_marginStart="10dp"
+                android:hint="Change your status"
+                android:textSize="14sp"
+                android:textStyle="italic">
+
+            </EditText>
+
+            <Button
+                android:id="@+id/btn_saveStatus"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:textAllCaps="false"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp">
+
+            </Button>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

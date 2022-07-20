@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_View"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activities.ChatDetailsActivity">
+
+    <LinearLayout
+        android:id="@+id/chatToolbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:background="@color/purple_200"
+        android:weightSum="3">
+
+
+        <!--Back arrow and profile photo-->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6">
+
+            <ImageView
+                android:id="@+id/btn_arrowBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_arrowback">
+
+            </ImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_profileImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/default_profile_avatar"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="3dp">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+        </RelativeLayout>
+
+        <!-- Name and last seen -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.4"
+            android:id="@+id/contactProfile">
+
+            <TextView
+                android:id="@+id/txt_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginTop="7dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginStart="4dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/txt_userStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_userName"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="4dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="14sp">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <!-- Calls and Menu -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btn_videoCall"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:src="@drawable/ic_videocall"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/btn_voiceCall"
+                    android:layout_width="22dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_calls"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/btn_menu"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_menu"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    >
+
+                </ImageView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <!--Chats area for displaying messages-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatsRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/userInputAreaLyt"
+        android:layout_below="@id/chatToolbarLayout">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <!--User input area for typing and sending messages-->
+
+    <LinearLayout
+        android:id="@+id/userInputAreaLyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="5dp"
+        >
+
+        <!--Text and media input -->
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:weightSum="3.5"
+            android:orientation="horizontal"
+            android:background="@drawable/message_input_border"
+            >
+
+            <ImageView
+                android:id="@+id/btn_emoji"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_emoji"
+                android:layout_weight=".5">
+
+            </ImageView>
+
+            <EditText
+                android:id="@+id/et_userMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:hint="Message"
+                android:background="#E6E6E8"
+                android:layout_gravity="center_vertical"
+                android:textSize="16sp"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/black"
+                android:inputType="textLongMessage|textMultiLine"
+                android:maxHeight="200dp"
+                android:maxWidth="150dp"
+                >
+
+            </EditText>
+
+            <ImageView
+                android:id="@+id/btn_attach"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_attach"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="5dp"
+                android:layout_weight=".5"
+                android:rotation="@integer/material_motion_duration_long_1">
+
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/btn_camera"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_black_camera"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="2.5dp"
+                android:layout_weight=".5">
+
+            </ImageView>
+
+
+
+        </LinearLayout>
+
+        <!--Send button-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_sendMessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/purple_200"
+                android:src="@drawable/ic_send"
+                android:padding="7dp"
+                android:layout_gravity="center_vertical"
+                >
+
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
